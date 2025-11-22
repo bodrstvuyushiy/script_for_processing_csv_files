@@ -10,7 +10,3 @@ class Employee:
     skills: str
     team: str
     experience_years: int
-
-
-
-

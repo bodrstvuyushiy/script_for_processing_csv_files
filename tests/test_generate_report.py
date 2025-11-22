@@ -1,4 +1,3 @@
-import pytest
 from dto import Employee
 from reports import generate_report
 

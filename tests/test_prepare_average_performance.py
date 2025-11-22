@@ -1,5 +1,4 @@
 from pathlib import Path
-import pytest
 from main import read_csv_files
 from reports import AveragePerformance
 
@@ -17,5 +16,3 @@ def test_prepare_average_performance(path_1: Path, path_2: Path) -> None:
     assert result_items[-1]["position"] == expected_min_position
     assert result_items[0]["performance"] == expected_max_performance
     assert result_items[-1]["performance"] == expected_min_performance
-
-

@@ -6,8 +6,6 @@ from dto import Employee
 from reports import available_reports, generate_report
 
 
-
-
 def read_csv_files(paths: list[str]) -> list[Employee]:
     list_objects: list[Employee] = []
     for raw_path in paths:
@@ -34,14 +32,16 @@ def read_csv_files(paths: list[str]) -> list[Employee]:
                         )
                     )
             except KeyError as e:
-                raise KeyError(f"Неверно записан заголовок {e}, проверьте файл {path} на корректность и поробуйте заново")
+                raise KeyError(
+                    f"Неверно записан заголовок {e},\nпроверьте файл {{path}} на корректность и поробуйте заново"
+                )
             except ValueError as e:
-                ValueError(f"Значение записано в ячейку не в верном формате {e}, проверьте файл {path} на корректность и поробуйте заново")
-
-
+                ValueError(
+                    f"Значение записано в ячейку не в верном формате {e},\n"
+                    "проверьте файл {path} на корректность и поробуйте заново"
+                )
 
     return list_objects
-
 
 
 def main() -> None:
